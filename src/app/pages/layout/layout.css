@@ -1,3 +1,84 @@
+@import "tailwindcss";
+
+/* =========================================
+   NAVBAR & LAYOUT STYLES (Tailwind Applied)
+========================================= */
+.navbar-wrapper {
+  @apply fixed top-0 left-0 right-0 z-50 border-b border-black/10 bg-[#F5EFE6]/95 backdrop-blur-md;
+}
+
+.navbar-container {
+  @apply mx-auto flex max-w-7xl items-center justify-between px-6 py-4;
+}
+
+.logo-wrapper {
+  @apply flex flex-col leading-none;
+}
+
+.logo-title {
+  @apply text-2xl font-black tracking-[0.35em];
+}
+
+.logo-subtitle {
+  @apply mt-1 text-center text-[10px] font-semibold tracking-[0.5em];
+}
+
+.desktop-nav {
+  @apply hidden items-center gap-8 md:flex;
+}
+
+.nav-link {
+  @apply text-sm font-semibold transition hover:text-[#9A7B4F];
+}
+
+.nav-right-actions {
+  @apply flex items-center gap-4;
+}
+
+.view-menu-btn {
+  @apply border border-black bg-black px-5 py-2 text-sm font-semibold text-white transition hover:bg-transparent hover:text-black;
+}
+
+.desktop-only-btn {
+  @apply hidden sm:inline-block;
+}
+
+.hamburger-btn {
+  @apply flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden focus:outline-none;
+}
+
+.hamburger-line {
+  @apply h-0.5 w-6 bg-black transition-all duration-300;
+}
+
+.mobile-menu-drawer {
+  @apply border-b border-black/10 bg-[#F5EFE6] px-6 md:hidden overflow-hidden transition-all duration-300 ease-in-out;
+}
+
+.mobile-menu-open {
+  @apply max-h-96 py-6 opacity-100;
+}
+
+.mobile-menu-closed {
+  @apply max-h-0 py-0 opacity-0;
+}
+
+.mobile-menu-content {
+  @apply flex flex-col gap-4;
+}
+
+.mobile-nav-link {
+  @apply text-base font-semibold transition hover:text-[#9A7B4F];
+}
+
+.mobile-action-btn {
+  @apply mt-2 text-center py-2.5 inline-block;
+}
+
+.main-content {
+  @apply pt-[73px];
+}
+
 /* =========================================
    NAVBAR ACTIVE ROUTE HIGHLIGHT
 ========================================= */
@@ -6,7 +87,6 @@
   position: relative;
 }
 
-/* Optional: Adds a nice neo-brutalist dot or underline indicator under the active link */
 .active-link::after {
   content: '';
   position: absolute;
@@ -17,47 +97,23 @@
   background-color: #9A7B4F;
 }
 
-
-
 /* ================= FOOTER ================= */
 .footer-section {
-    border-top: 1px solid #000000;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+  @apply border-t border-black px-6 py-10;
 }
 
 .footer-container {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    max-width: 80rem;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .footer-container {
-        flex-direction: row;
-        align-items: center;
-    }
+  @apply mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center;
 }
 
 .footer-logo {
-    font-size: 1.25rem;
-    font-weight: 900;
-    letter-spacing: 0.3em;
+  @apply text-xl font-black tracking-[0.3em];
 }
 
 .footer-tagline {
-    margin-top: 0.5rem;
-    font-size: 0.875rem;
-    color: rgba(0, 0, 0, 0.6);
+  @apply mt-2 text-sm text-black/60;
 }
 
 .footer-copyright {
-    font-size: 0.875rem;
-    color: rgba(0, 0, 0, 0.5);
+  @apply text-sm text-black/50;
 }

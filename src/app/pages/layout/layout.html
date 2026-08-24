@@ -1,27 +1,24 @@
 <!-- ================= NAVBAR ================= -->
-<nav class="fixed top-0 left-0 right-0 z-50 border-b border-black/10 bg-[#F5EFE6]/95 backdrop-blur-md">
-
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+<nav class="navbar-wrapper">
+  <div class="navbar-container">
 
     <!-- Logo -->
-    <a routerLink="/" class="flex flex-col leading-none">
-      <span class="text-2xl font-black tracking-[0.35em]">
+    <a routerLink="/" class="logo-wrapper">
+      <span class="logo-title">
         HIRAYA
       </span>
-      <span class="mt-1 text-center text-[10px] font-semibold tracking-[0.5em]">
+      <span class="logo-subtitle">
         CAFE
       </span>
     </a>
 
-
     <!-- Desktop Navigation -->
-    <div class="hidden items-center gap-8 md:flex">
-
+    <div class="desktop-nav">
       <a
         routerLink="./"
         routerLinkActive="active-link"
         [routerLinkActiveOptions]="{ exact: true }"
-        class="text-sm font-semibold transition hover:text-[#9A7B4F]"
+        class="nav-link"
       >
         Home
       </a>
@@ -29,7 +26,7 @@
       <a
         routerLink="/menu"
         routerLinkActive="active-link"
-        class="text-sm font-semibold transition hover:text-[#9A7B4F]"
+        class="nav-link"
       >
         Menu
       </a>
@@ -37,7 +34,7 @@
       <a
         routerLink="/about"
         routerLinkActive="active-link"
-        class="text-sm font-semibold transition hover:text-[#9A7B4F]"
+        class="nav-link"
       >
         About
       </a>
@@ -45,30 +42,93 @@
       <a
         routerLink="/contact"
         routerLinkActive="active-link"
-        class="text-sm font-semibold transition hover:text-[#9A7B4F]"
+        class="nav-link"
+      >
+        Contact
+      </a>
+    </div>
+
+    <!-- Desktop View Menu Button & Mobile Hamburger Toggle -->
+    <div class="nav-right-actions">
+      <a
+        routerLink="/menu"
+        class="view-menu-btn desktop-only-btn"
+      >
+        VIEW MENU
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button
+        type="button"
+        (click)="isMobileMenuOpen = !isMobileMenuOpen"
+        class="hamburger-btn"
+        aria-label="Toggle Menu"
+      >
+        <span class="hamburger-line" [ngClass]="{'translate-y-2 rotate-45': isMobileMenuOpen}"></span>
+        <span class="hamburger-line" [ngClass]="{'opacity-0': isMobileMenuOpen}"></span>
+        <span class="hamburger-line" [ngClass]="{'-translate-y-2 -rotate-45': isMobileMenuOpen}"></span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Mobile Dropdown Menu Drawer -->
+  <div
+    class="mobile-menu-drawer"
+    [ngClass]="isMobileMenuOpen ? 'mobile-menu-open' : 'mobile-menu-closed'"
+  >
+    <div class="mobile-menu-content">
+      <a
+        routerLink="./"
+        (click)="isMobileMenuOpen = false"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="mobile-nav-link"
+      >
+        Home
+      </a>
+
+      <a
+        routerLink="/menu"
+        (click)="isMobileMenuOpen = false"
+        routerLinkActive="active-link"
+        class="mobile-nav-link"
+      >
+        Menu
+      </a>
+
+      <a
+        routerLink="/about"
+        (click)="isMobileMenuOpen = false"
+        routerLinkActive="active-link"
+        class="mobile-nav-link"
+      >
+        About
+      </a>
+
+      <a
+        routerLink="/contact"
+        (click)="isMobileMenuOpen = false"
+        routerLinkActive="active-link"
+        class="mobile-nav-link"
       >
         Contact
       </a>
 
+      <a
+        routerLink="/menu"
+        (click)="isMobileMenuOpen = false"
+        class="view-menu-btn mobile-action-btn"
+      >
+        VIEW MENU
+      </a>
     </div>
-
-
-    <!-- View Menu Button -->
-    <a
-      routerLink="/menu"
-      class="border border-black bg-black px-5 py-2 text-sm font-semibold text-white transition hover:bg-transparent hover:text-black"
-    >
-      VIEW MENU
-    </a>
-
   </div>
-
 </nav>
 
 
 <!-- ================= PAGE CONTENT ================= -->
-
-<main class="pt-[73px]">
+<main class="main-content">
   <router-outlet></router-outlet>
 </main>
 
