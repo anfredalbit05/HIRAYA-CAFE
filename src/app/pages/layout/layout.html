@@ -1,0 +1,92 @@
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 left-0 right-0 z-50 border-b border-black/10 bg-[#F5EFE6]/95 backdrop-blur-md">
+
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
+    <!-- Logo -->
+    <a routerLink="/" class="flex flex-col leading-none">
+      <span class="text-2xl font-black tracking-[0.35em]">
+        HIRAYA
+      </span>
+      <span class="mt-1 text-center text-[10px] font-semibold tracking-[0.5em]">
+        CAFE
+      </span>
+    </a>
+
+
+    <!-- Desktop Navigation -->
+    <div class="hidden items-center gap-8 md:flex">
+
+      <a
+        routerLink="./"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="text-sm font-semibold transition hover:text-[#9A7B4F]"
+      >
+        Home
+      </a>
+
+      <a
+        routerLink="/menu"
+        routerLinkActive="active-link"
+        class="text-sm font-semibold transition hover:text-[#9A7B4F]"
+      >
+        Menu
+      </a>
+
+      <a
+        routerLink="/about"
+        routerLinkActive="active-link"
+        class="text-sm font-semibold transition hover:text-[#9A7B4F]"
+      >
+        About
+      </a>
+
+      <a
+        routerLink="/contact"
+        routerLinkActive="active-link"
+        class="text-sm font-semibold transition hover:text-[#9A7B4F]"
+      >
+        Contact
+      </a>
+
+    </div>
+
+
+    <!-- View Menu Button -->
+    <a
+      routerLink="/menu"
+      class="border border-black bg-black px-5 py-2 text-sm font-semibold text-white transition hover:bg-transparent hover:text-black"
+    >
+      VIEW MENU
+    </a>
+
+  </div>
+
+</nav>
+
+
+<!-- ================= PAGE CONTENT ================= -->
+
+<main class="pt-[73px]">
+  <router-outlet></router-outlet>
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact" class="footer-section">
+  <div class="footer-container">
+    <div>
+      <p class="footer-logo">
+        HIRAYA
+      </p>
+      <p class="footer-tagline">
+        Brewed to inspire, made for you. ♡
+      </p>
+    </div>
+
+    <p class="footer-copyright">
+      © 2026 Hiraya Cafe. All Rights Reserved.
+    </p>
+  </div>
+</footer>

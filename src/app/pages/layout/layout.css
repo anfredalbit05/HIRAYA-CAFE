@@ -1,0 +1,63 @@
+/* =========================================
+   NAVBAR ACTIVE ROUTE HIGHLIGHT
+========================================= */
+.active-link {
+  color: #9A7B4F !important;
+  position: relative;
+}
+
+/* Optional: Adds a nice neo-brutalist dot or underline indicator under the active link */
+.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #9A7B4F;
+}
+
+
+
+/* ================= FOOTER ================= */
+.footer-section {
+    border-top: 1px solid #000000;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.footer-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    max-width: 80rem;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.footer-logo {
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: 0.3em;
+}
+
+.footer-tagline {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer-copyright {
+    font-size: 0.875rem;
+    color: rgba(0, 0, 0, 0.5);
+}
