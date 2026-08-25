@@ -105,7 +105,7 @@
       </div>
 
 
-      <!-- =========================
+<!-- =========================
            CONTACT FORM
       ========================= -->
       <div class="contact-form-card">
@@ -123,8 +123,8 @@
         </div>
 
 
-        <!-- Form -->
-        <form class="form-container">
+        <!-- Form with Submit Handler -->
+        <form class="form-container" (submit)="sendMessage($event, nameInput, emailInput, messageInput)">
 
           <!-- Full Name -->
           <div class="form-group">
@@ -132,10 +132,12 @@
               FULL NAME
             </label>
             <input
+              #nameInput
               id="name"
               type="text"
               placeholder="Enter your name"
               class="contact-input"
+              required
             />
           </div>
 
@@ -146,10 +148,12 @@
               EMAIL ADDRESS
             </label>
             <input
+              #emailInput
               id="email"
               type="email"
               placeholder="Enter your email"
               class="contact-input"
+              required
             />
           </div>
 
@@ -160,25 +164,27 @@
               MESSAGE
             </label>
             <textarea
+              #messageInput
               id="message"
               rows="6"
               placeholder="Write your message"
               class="contact-input contact-textarea"
+              required
             ></textarea>
           </div>
 
 
           <!-- Button -->
           <button type="submit" class="send-button">
-            SEND MESSAGE
+            {{ isSending ? 'SENDING...' : 'SEND MESSAGE' }}
           </button>
 
         </form>
 
 
-        <!-- Form Footer -->
+        <!-- Form Footer / Status Message -->
         <p class="form-footer-note">
-          We will get back to you as soon as possible.
+          {{ statusMessage }}
         </p>
 
       </div>
@@ -223,7 +229,7 @@
           </iframe>
         </div>
       </div>
-    </div>>
+    </div>
 
   </div>
 </section>
