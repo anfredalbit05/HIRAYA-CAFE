@@ -1,600 +1,976 @@
 :host {
-  display: block;
+    display: block;
 }
 
-/* =========================================
+
+/* =========================================================
    PAGE CONTAINER & LAYOUT
-========================================= */
+========================================================= */
 
 .menu-page {
-  min-height: 100vh;
-  overflow-x: hidden;
-  background-color: #F5EFE6;
-  background-image:
-    radial-gradient(circle at 15% 10%, rgba(0, 0, 0, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 85% 90%, rgba(0, 0, 0, 0.03) 0%, transparent 40%);
-  padding: 4rem 1rem;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background-color: #F8F5F0;
+
+    background-image:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(212, 197, 185, 0.35) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(230, 222, 213, 0.4) 0%,
+            transparent 50%
+        );
+
+    padding: 4rem 1rem;
+
+    color: #1A1816;
 }
 
 @media (min-width: 640px) {
-  .menu-page {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
+    .menu-page {
+        padding: 5rem 1.5rem;
+    }
 }
 
 @media (min-width: 1024px) {
-  .menu-page {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+    .menu-page {
+        padding: 5rem 2rem;
+    }
 }
 
 .menu-container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 80rem;
+    width: 100%;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
-/* =========================================
+/* =========================================================
    PAGE HEADER
-========================================= */
+========================================================= */
 
 .menu-header {
-  margin-bottom: 3.5rem;
-  text-align: center;
+    margin-bottom: 3.5rem;
+    text-align: center;
 }
 
 @media (min-width: 640px) {
-  .menu-header {
-    margin-bottom: 5rem;
-  }
+    .menu-header {
+        margin-bottom: 4.5rem;
+    }
 }
 
 .menu-brand-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.45em;
-  color: rgba(0, 0, 0, 0.6);
-  padding: 0.35rem 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+
+    padding: 0.4rem 1.25rem;
+
+    border: 1px solid rgba(26, 24, 22, 0.2);
+    border-radius: 999px;
+
+    background: rgba(212, 197, 185, 0.25);
+
+    color: #1A1816;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.45em;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 @media (min-width: 640px) {
-  .menu-brand-tag {
-    font-size: 0.875rem;
-  }
+    .menu-brand-tag {
+        font-size: 0.875rem;
+    }
 }
 
 .menu-page-title {
-  margin-top: 1.25rem;
-  font-size: 2.25rem;
-  font-weight: 900;
-  letter-spacing: -0.025em;
-  color: #000000;
+    margin-top: 1.25rem;
+
+    color: #1A1816;
+
+    font-size: 2.25rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.025em;
 }
 
 @media (min-width: 640px) {
-  .menu-page-title {
-    font-size: 3.75rem;
-  }
+    .menu-page-title {
+        font-size: 3.75rem;
+    }
 }
 
 @media (min-width: 1024px) {
-  .menu-page-title {
-    font-size: 4.5rem;
-  }
+    .menu-page-title {
+        font-size: 4.5rem;
+    }
 }
 
 .menu-divider-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.25rem;
-  display: flex;
-  max-width: 28rem;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+
+    max-width: 28rem;
+
+    margin: 1.25rem auto 0;
+
+    align-items: center;
+
+    gap: 1rem;
 }
 
 .menu-divider-line {
-  height: 1px;
-  flex: 1 1 0%;
-  background-color: rgba(0, 0, 0, 0.2);
+    height: 1px;
+
+    flex: 1;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(26, 24, 22, 0.25),
+        transparent
+    );
 }
 
 .menu-divider-text {
-  font-size: 0.75rem;
-  color: rgba(0, 0, 0, 0.5);
+    color: rgba(26, 24, 22, 0.6);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
 }
 
 .menu-header-desc {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.5rem;
-  max-width: 36rem;
-  font-size: 0.875rem;
-  line-height: 1.75rem;
-  color: rgba(0, 0, 0, 0.6);
+    max-width: 36rem;
+
+    margin: 1.5rem auto 0;
+
+    color: rgba(26, 24, 22, 0.7);
+
+    font-size: 0.875rem;
+    line-height: 1.75;
 }
 
 @media (min-width: 640px) {
-  .menu-header-desc {
-    font-size: 1rem;
-  }
+    .menu-header-desc {
+        font-size: 1rem;
+    }
 }
 
 
-/* =========================================
-   SECTIONS & GRIDS
-========================================= */
+/* =========================================================
+   SECTIONS
+========================================================= */
 
 .menu-section {
-  margin-bottom: 5rem;
+    margin-bottom: 5rem;
 }
 
 .menu-section-last {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
 .section-title-wrapper {
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+
+    margin-bottom: 2rem;
+
+    align-items: center;
+
+    gap: 1rem;
 }
 
 @media (min-width: 640px) {
-  .section-title-wrapper {
-    margin-bottom: 2.5rem;
-  }
+    .section-title-wrapper {
+        margin-bottom: 2.5rem;
+    }
 }
 
 .section-subtitle {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  color: rgba(0, 0, 0, 0.5);
+    color: #594D44;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
 }
 
 .section-title {
-  margin-top: 0.5rem;
-  font-size: 1.875rem;
-  font-weight: 900;
-  color: #000000;
+    margin-top: 0.5rem;
+
+    color: #1A1816;
+
+    font-size: 1.875rem;
+    font-weight: 900;
+    line-height: 1.1;
 }
 
 @media (min-width: 640px) {
-  .section-title {
-    font-size: 2.25rem;
-  }
+    .section-title {
+        font-size: 2.25rem;
+    }
 }
 
 .section-title-line {
-  margin-top: 1.75rem;
-  height: 1px;
-  flex: 1 1 0%;
-  background-color: rgba(0, 0, 0, 0.2);
+    height: 1px;
+
+    flex: 1;
+
+    margin-top: 1.75rem;
+
+    background: linear-gradient(
+        90deg,
+        rgba(26, 24, 22, 0.2),
+        transparent
+    );
 }
 
-.menu-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.25rem;
-}
 
-@media (min-width: 640px) {
-  .menu-grid-3 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
+/* =========================================================
+   MENU GRIDS
+========================================================= */
 
-@media (min-width: 1024px) {
-  .menu-grid-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.menu-grid-4 {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.25rem;
-}
-
-@media (min-width: 640px) {
-  .menu-grid-4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .menu-grid-4 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1280px) {
-  .menu-grid-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-.menu-grid-5 {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.25rem;
-}
-
-@media (min-width: 640px) {
-  .menu-grid-5 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .menu-grid-5 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1280px) {
-  .menu-grid-5 {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-}
-
+.menu-grid-3,
+.menu-grid-4,
+.menu-grid-5,
 .menu-grid-snacks {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.25rem;
+    display: grid;
+
+    grid-template-columns: repeat(
+        1,
+        minmax(0, 1fr)
+    );
+
+    gap: 1rem;
 }
 
 @media (min-width: 640px) {
-  .menu-grid-snacks {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+    .menu-grid-3,
+    .menu-grid-4,
+    .menu-grid-5,
+    .menu-grid-snacks {
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+        gap: 1.25rem;
+    }
 }
 
 @media (min-width: 1024px) {
-  .menu-grid-snacks {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
+
+    .menu-grid-3 {
+        grid-template-columns: repeat(
+            3,
+            minmax(0, 1fr)
+        );
+    }
+
+    .menu-grid-4 {
+        grid-template-columns: repeat(
+            3,
+            minmax(0, 1fr)
+        );
+    }
+
+    .menu-grid-5 {
+        grid-template-columns: repeat(
+            3,
+            minmax(0, 1fr)
+        );
+    }
+
+    .menu-grid-snacks {
+        grid-template-columns: repeat(
+            4,
+            minmax(0, 1fr)
+        );
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .menu-grid-4 {
+        grid-template-columns: repeat(
+            4,
+            minmax(0, 1fr)
+        );
+    }
+
+    .menu-grid-5 {
+        grid-template-columns: repeat(
+            5,
+            minmax(0, 1fr)
+        );
+    }
 }
 
 
-/* =========================================
-   MENU CARD & IMAGE WRAPPER
-========================================= */
+/* =========================================================
+   STANDARD MENU CARD
+========================================================= */
 
 .menu-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid rgba(0, 0, 0, 0.85);
-  border-radius: 18px;
-  background: #ffffff;
-  padding: 1.25rem;
-  overflow: hidden;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    border: 1px solid rgba(26, 24, 22, 0.10);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    padding: 0.75rem;
+
+    overflow: hidden;
+
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.9);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
+
+
+/* Remove old top line */
 
 .menu-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #000000, #8a7355, #000000);
-  opacity: 0.7;
-  z-index: 2;
+    display: none;
 }
+
+
+/* Hover */
 
 .menu-card:hover {
-  transform: translateY(-6px);
-  background: #f8f2e9;
-  box-shadow: 10px 10px 0 #000000;
+    transform: translateY(-5px);
+
+    border-color: rgba(26, 24, 22, 0.18);
+
+    box-shadow:
+        0 16px 32px rgba(26, 24, 22, 0.10);
 }
+
+
+/* =========================================================
+   CARD BODY
+========================================================= */
 
 .menu-card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    flex: 1;
+
+    align-items: center;
+
+    text-align: center;
 }
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
 
 .menu-image-wrapper {
-  width: 100%;
-  height: 150px;
-  overflow: hidden;
-  border: 1px solid #000000;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  background-color: #f0ebd8;
+    position: relative;
+
+    display: flex;
+
+    width: 100%;
+    height: 150px;
+
+    margin-bottom: 0.9rem;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(26, 24, 22, 0.08);
+    border-radius: 11px;
+
+    background-color: #EFECE6;
 }
 
+
+/*
+    IMPORTANT:
+
+    contain = entire cup remains visible
+    cover  = cup gets cropped
+*/
+
 .menu-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.4s ease;
 }
+
+
+/* Subtle hover zoom */
 
 .menu-card:hover .menu-image-wrapper img,
 .snack-card:hover .menu-image-wrapper img {
-  transform: scale(1.05);
+    transform: scale(1.04);
 }
+
+
+/* =========================================================
+   PRODUCT NAME
+========================================================= */
 
 .menu-card h3 {
-  font-size: 1.125rem;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  line-height: 1.2;
-  color: #000000;
+    margin: 0;
+
+    color: #1A1816;
+
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.2;
+
+    letter-spacing: 0.04em;
+
+    text-align: center;
 }
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .menu-description {
-  margin-top: 0.75rem;
-  min-height: 44px;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.55);
+    width: 100%;
+
+    margin-top: 0.6rem;
+
+    min-height: 42px;
+
+    color: rgba(26, 24, 22, 0.7);
+
+    font-size: 0.8rem;
+    line-height: 1.5;
+
+    text-align: center;
 }
 
 
-/* =========================================
+/* =========================================================
    PRICE GRID
-========================================= */
+   Used for drinks with 2 sizes
+========================================================= */
 
 .price-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 1.5rem;
-  border-top: 1px solid #000000;
-  border-left: 1px solid #000000;
-  border-radius: 12px;
-  overflow: hidden;
+    display: grid;
+
+    width: 100%;
+
+    grid-template-columns: repeat(
+        2,
+        minmax(0, 1fr)
+    );
+
+    margin-top: 0.85rem;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(26, 24, 22, 0.10);
+    border-radius: 12px;
+
+    background: rgba(212, 197, 185, 0.10);
 }
 
 .price-grid > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  padding: 0.85rem 0.5rem;
-  transition: background-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding: 0.65rem 0.4rem;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.35rem;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+.price-grid > div:first-child {
+    border-right: 1px solid rgba(
+        26,
+        24,
+        22,
+        0.10
+    );
 }
 
 .price-grid > div:hover {
-  background-color: rgba(0, 0, 0, 0.04);
+    background-color: rgba(
+        212,
+        197,
+        185,
+        0.25
+    );
 }
+
+
+/* Size */
 
 .price-grid span {
-  width: 100%;
-  background: #000000;
-  border-radius: 999px;
-  padding: 0.35rem 0.5rem;
-  text-align: center;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: #ffffff;
+    display: block;
+
+    width: auto;
+    min-width: 55px;
+
+    padding: 0.25rem 0.55rem;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #1A1816;
+
+    color: #F8F5F0;
+
+    font-size: 0.6rem;
+    font-weight: 800;
+
+    letter-spacing: 0.06em;
+
+    text-align: center;
 }
+
+
+/* Price */
 
 .price-grid strong {
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: #000000;
+    color: #1A1816;
+
+    font-size: 1.25rem;
+    font-weight: 900;
+    line-height: 1;
 }
 
 
-/* =========================================
-   FRUIT SODA
-========================================= */
-
-.fruit-card {
-  text-align: center;
-}
-
-.fruit-image-wrapper {
-  height: 120px;
-}
+/* =========================================================
+   SINGLE PRICE
+========================================================= */
 
 .single-price {
-  margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    margin-top: 0.75rem;
+
+    align-items: center;
 }
 
 .single-price span {
-  display: inline-block;
-  background: #000000;
-  border-radius: 999px;
-  padding: 0.45rem 1.25rem;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #ffffff;
+    display: inline-block;
+
+    padding: 0.3rem 0.85rem;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #1A1816;
+
+    color: #F8F5F0;
+
+    font-size: 0.62rem;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
 }
 
 .single-price strong {
-  display: block;
-  margin-top: 0.75rem;
-  font-size: 2rem;
-  font-weight: 900;
-  color: #000000;
+    display: block;
+
+    margin-top: 0.45rem;
+
+    color: #1A1816;
+
+    font-size: 1.55rem;
+    font-weight: 900;
+    line-height: 1;
 }
 
 
-/* =========================================
+/* =========================================================
+   FRUIT SODA
+========================================================= */
+
+.fruit-card {
+    text-align: center;
+}
+
+.fruit-image-wrapper {
+    height: 135px;
+}
+
+
+/* =========================================================
    SNACK CARDS
-========================================= */
+========================================================= */
 
 .snack-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #000000;
-  border-radius: 18px;
-  background: linear-gradient(155deg, #1a1a1a 0%, #000000 65%);
-  padding: 1.25rem;
-  color: #ffffff;
-  overflow: hidden;
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
+    position: relative;
 
-.snack-card::after {
-  content: "";
-  position: absolute;
-  bottom: -40px;
-  right: -40px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    border: 1px solid rgba(
+        26,
+        24,
+        22,
+        0.18
+    );
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2A2622 0%,
+            #1A1816 100%
+        );
+
+    padding: 0.75rem;
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 25px rgba(
+            26,
+            24,
+            22,
+            0.14
+        );
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .snack-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 10px 10px 0 #c9b79c;
+    transform: translateY(-5px);
+
+    border-color: rgba(
+        255,
+        255,
+        255,
+        0.18
+    );
+
+    box-shadow:
+        0 16px 32px rgba(
+            26,
+            24,
+            22,
+            0.24
+        );
 }
+
+
+/* =========================================================
+   SNACK IMAGE
+========================================================= */
 
 .snack-image-wrapper {
-  height: 140px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: #2a2a2a;
+    position: relative;
+
+    display: flex;
+
+    width: 100%;
+    height: 135px;
+
+    margin-bottom: 0.9rem;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.10
+    );
+
+    border-radius: 11px;
+
+    background-color: #38322D;
 }
 
+.snack-image-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+/* =========================================================
+   SNACK NAME
+========================================================= */
+
 .snack-card h3 {
-  font-size: 1.25rem;
-  font-weight: 900;
-  line-height: 1.25;
-  letter-spacing: 0.04em;
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+    font-weight: 900;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.04em;
+
+    text-align: center;
 }
 
 .snack-card h3 span {
-  display: block;
-  margin-top: 0.3rem;
-  color: #d8c8af;
+    display: block;
+
+    margin-top: 0.3rem;
+
+    color: #D4C5B9;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
 }
+
+
+/* =========================================================
+   SNACK PRICE
+========================================================= */
 
 .snack-card p {
-  margin-top: 1.5rem;
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: #ffffff;
+    margin: 0.7rem 0 0;
+
+    color: #ffffff;
+
+    font-size: 1.55rem;
+    font-weight: 900;
+
+    line-height: 1;
+
+    text-align: center;
 }
 
 
-/* =========================================
-   FOOTER SECTION
-========================================= */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .menu-footer {
-  margin-top: 5rem;
-  text-align: center;
+    margin-top: 5rem;
+
+    text-align: center;
 }
 
 .menu-footer-line {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  height: 1px;
-  width: 100%;
-  max-width: 28rem;
-  background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 28rem;
+
+    height: 1px;
+
+    margin: 0 auto 1.5rem;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(26, 24, 22, 0.25),
+        transparent
+    );
 }
 
 .menu-footer-quote {
-  font-family: serif;
-  font-size: 1.25rem;
-  font-style: italic;
-  color: rgba(0, 0, 0, 0.7);
+    color: rgba(26, 24, 22, 0.7);
+
+    font-family: serif;
+
+    font-size: 1.25rem;
+    font-style: italic;
 }
 
 @media (min-width: 640px) {
-  .menu-footer-quote {
-    font-size: 1.5rem;
-  }
+    .menu-footer-quote {
+        font-size: 1.5rem;
+    }
 }
 
 .menu-footer-hearts {
-  margin-top: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  color: rgba(0, 0, 0, 0.4);
+    display: flex;
+
+    margin-top: 1.25rem;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+
+    color: #1A1816;
 }
 
 .heart-line {
-  height: 1px;
-  width: 4rem;
-  background-color: rgba(0, 0, 0, 0.3);
+    width: 4rem;
+    height: 1px;
+
+    background: rgba(
+        26,
+        24,
+        22,
+        0.25
+    );
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* =========================================================
+   SMALL MOBILE DEVICES
+========================================================= */
 
-@media (max-width: 640px) {
-  .menu-card {
-    padding: 1rem;
-    border-radius: 14px;
-  }
+@media (max-width: 380px) {
 
-  .menu-card h3 {
-    font-size: 1rem;
-  }
+    .menu-page {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
 
-  .menu-description {
-    min-height: auto;
-    font-size: 0.8rem;
-  }
+    .menu-grid-3,
+    .menu-grid-4,
+    .menu-grid-5,
+    .menu-grid-snacks {
+        gap: 0.75rem;
+    }
 
-  .price-grid {
-    margin-top: 1.25rem;
-  }
+    .menu-card,
+    .snack-card {
+        padding: 0.6rem;
+        border-radius: 16px;
+    }
 
-  .price-grid strong {
-    font-size: 1.2rem;
-  }
+    .menu-image-wrapper {
+        height: 120px;
+    }
 
-  .snack-card {
-    padding: 1rem;
-    border-radius: 14px;
-  }
+    .snack-image-wrapper {
+        height: 120px;
+    }
 
-  .snack-card h3 {
-    font-size: 1.1rem;
-  }
+    .menu-card h3,
+    .snack-card h3 {
+        font-size: 0.9rem;
+    }
 
-  .snack-card p {
-    font-size: 2rem;
-  }
+    .single-price strong {
+        font-size: 1.4rem;
+    }
+
+    .price-grid strong {
+        font-size: 1.15rem;
+    }
 }
 
 
-/* =========================================
-   REDUCE MOTION
-========================================= */
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 640px) {
+
+    .menu-card,
+    .snack-card {
+        padding: 0.85rem;
+    }
+
+    .menu-image-wrapper {
+        height: 150px;
+    }
+
+    .snack-image-wrapper {
+        height: 145px;
+    }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1280px) {
+
+    .menu-card,
+    .snack-card {
+        padding: 0.85rem;
+    }
+
+    .menu-image-wrapper {
+        height: 155px;
+    }
+
+    .snack-image-wrapper {
+        height: 150px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .menu-card,
-  .snack-card,
-  .price-grid > div,
-  .menu-image-wrapper img {
-    transition: none;
-  }
+
+    .menu-card,
+    .snack-card,
+    .price-grid > div,
+    .menu-image-wrapper img,
+    .snack-image-wrapper img {
+        transition: none;
+    }
+
+    .menu-card:hover,
+    .snack-card:hover {
+        transform: none;
+    }
+
+    .menu-card:hover .menu-image-wrapper img,
+    .snack-card:hover .menu-image-wrapper img {
+        transform: none;
+    }
 }
