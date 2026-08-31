@@ -350,6 +350,478 @@
   }
 }
 
+/* =========================================
+   PHOTO + VIDEO SECTION
+========================================= */
+
+.about-media-section {
+  margin-top: 5rem;
+}
+
+@media (min-width: 640px) {
+  .about-media-section {
+    margin-top: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-media-section {
+    margin-top: 7rem;
+  }
+}
+
+
+/* =========================================
+   MEDIA HEADER
+========================================= */
+
+.media-header {
+  max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.media-title {
+  margin-top: 1rem;
+
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+
+  color: #1A1816;
+}
+
+.media-subtitle {
+  margin-top: 1rem;
+
+  font-size: 1rem;
+  line-height: 1.8rem;
+
+  color: rgba(26, 24, 22, 0.65);
+}
+
+@media (min-width: 640px) {
+  .media-title {
+    font-size: 2.75rem;
+  }
+
+  .media-subtitle {
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .media-title {
+    font-size: 3.5rem;
+  }
+}
+
+
+/* =========================================
+   IMAGE GALLERY
+========================================= */
+
+.about-gallery {
+  margin-top: 3rem;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.gallery-item {
+  position: relative;
+
+  min-height: 260px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background-color: #D4C5B9;
+
+  box-shadow:
+    5px 5px 0 rgba(26, 24, 22, 0.85);
+
+  isolation: isolate;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.4s ease;
+}
+
+.gallery-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 1.25rem;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(26, 24, 22, 0.8) 0%,
+      rgba(26, 24, 22, 0.15) 50%,
+      transparent 75%
+    );
+
+  z-index: 2;
+}
+
+.gallery-overlay span {
+  font-size: 0.75rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.22em;
+
+  color: #F8F5F0;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.07);
+
+  filter: brightness(0.9);
+}
+
+
+/* TABLET */
+
+@media (min-width: 640px) {
+  .about-gallery {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 1.25rem;
+  }
+
+  .gallery-item {
+    min-height: 300px;
+  }
+
+  .gallery-item-large {
+    grid-row: span 2;
+
+    min-height: 620px;
+  }
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 1024px) {
+  .about-gallery {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    grid-template-rows:
+      260px
+      260px;
+
+    gap: 1.5rem;
+  }
+
+  .gallery-item {
+    min-height: 0;
+  }
+
+  .gallery-item-large {
+    grid-column: span 1;
+    grid-row: span 2;
+
+    min-height: 0;
+  }
+
+  .gallery-item-wide {
+    grid-column: span 2;
+  }
+}
+
+
+/* =========================================
+   VIDEO SECTION
+========================================= */
+
+.about-video-section {
+  position: relative;
+
+  margin-top: 5rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+
+  gap: 3rem;
+
+  padding: 2rem;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2A2622 0%,
+      #1A1816 75%
+    );
+
+  box-shadow:
+    12px 12px 0 rgba(212, 197, 185, 0.35);
+
+  overflow: hidden;
+}
+
+
+/* Decorative circle */
+
+.about-video-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  top: -170px;
+  left: -120px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(212, 197, 185, 0.06);
+
+  pointer-events: none;
+}
+
+.about-video-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -130px;
+  bottom: -140px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   TEXT - LEFT SIDE
+========================================= */
+
+.video-content {
+  position: relative;
+  z-index: 2;
+}
+
+.video-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #D4C5B9;
+}
+
+.video-title {
+  margin-top: 1rem;
+
+  font-size: 2rem;
+  font-weight: 900;
+
+  line-height: 1.15;
+
+  color: #F8F5F0;
+}
+
+.video-divider {
+  width: 5rem;
+  height: 3px;
+
+  margin-top: 1.5rem;
+
+  border-radius: 999px;
+
+  background-color: #D4C5B9;
+}
+
+.video-desc {
+  margin-top: 1.5rem;
+
+  max-width: 32rem;
+
+  font-size: 1rem;
+  line-height: 1.9rem;
+
+  color: rgba(248, 245, 240, 0.72);
+}
+
+.video-quote {
+  margin-top: 1.5rem;
+
+  font-size: 0.9rem;
+  font-style: italic;
+
+  color: #D4C5B9;
+}
+
+
+/* =========================================
+   VIDEO - RIGHT SIDE
+========================================= */
+
+.video-wrapper {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 400px;
+
+  justify-self: center;
+
+  aspect-ratio: 9 / 16;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background-color: #000;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.hiraya-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  background-color: #000;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 639px) {
+
+  .about-video-section {
+    padding: 1.5rem;
+
+    gap: 2rem;
+
+    border-radius: 18px;
+  }
+
+  .video-wrapper {
+    max-width: 320px;
+
+    border-radius: 14px;
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (min-width: 640px) {
+
+  .about-video-section {
+    padding: 2.5rem;
+  }
+
+  .video-title {
+    font-size: 2.75rem;
+  }
+
+  .video-wrapper {
+    max-width: 350px;
+  }
+
+}
+
+
+/* =========================================
+   DESKTOP
+   TEXT LEFT | VIDEO RIGHT
+========================================= */
+
+@media (min-width: 1024px) {
+
+  .about-video-section {
+    grid-template-columns: minmax(0, 1fr) 400px;
+
+    gap: 5rem;
+
+    padding: 4rem;
+  }
+
+  .video-content {
+    justify-self: start;
+  }
+
+  .video-wrapper {
+    width: 400px;
+    max-width: 100%;
+
+    justify-self: end;
+  }
+
+  .video-title {
+    font-size: 3.25rem;
+  }
+
+}
+
+
+/* =========================================
+   LARGE SCREENS
+========================================= */
+
+@media (min-width: 1280px) {
+
+  .about-video-section {
+    grid-template-columns: minmax(0, 1fr) 420px;
+
+    padding: 4.5rem 5rem;
+  }
+
+  .video-wrapper {
+    width: 420px;
+  }
+
+}
+
 
 /* =========================
    VALUE CARDS
@@ -454,7 +926,6 @@
 .value-card:hover .value-divider {
   background-color: #D4C5B9;
 }
-
 
 /* =========================
    FOOTER MESSAGE SECTION
