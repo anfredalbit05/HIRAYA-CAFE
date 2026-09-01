@@ -167,23 +167,35 @@
 
         </div>
 
+        <!-- VIDEO -->
         <div class="video-wrapper">
 
-        <video
-          class="hiraya-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-        >
-          <source
-            src="/videos/hiraya-cafe.mp4"
-            type="video/mp4"
-          />
+          <video
+            #hirayaVideo
+            class="hiraya-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="/images/about/video-poster.jpg"
+          >
+            <source
+              src="/videos/hiraya-cafe.mp4"
+              type="video/mp4"
+            />
 
-          Your browser does not support the video tag.
-        </video>
+            Your browser does not support the video tag.
+          </video>
+
+          <button
+            type="button"
+            class="sound-button"
+            (click)="toggleSound()"
+            aria-label="Toggle video sound"
+          >
+            {{ isMuted ? '🔇' : '🔊' }}
+          </button>
 
         </div>
 
