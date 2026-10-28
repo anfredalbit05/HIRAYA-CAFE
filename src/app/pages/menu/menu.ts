@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './menu.css',
   templateUrl: './menu.html',
 })
-export class Menu {}
+export class Menu {
+
+  backToMenuTop(): void {
+  document.getElementById('menu-top')?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+}
+
+}

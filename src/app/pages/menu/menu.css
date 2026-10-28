@@ -1,976 +1,500 @@
+
+/* ==================== THEME ==================== */
 :host {
-    display: block;
+  display: block;
+  --cream: #f7f1e8;
+  --cream-dark: #e9ddcd;
+  --coffee: #39271e;
+  --brown: #79563b;
+  --gold: #b58b58;
+  --muted: #817366;
+  --border: rgba(121, 86, 59, .16);
+  --glass: rgba(255, 253, 249, .68);
+  --shadow: 0 15px 38px rgba(65, 42, 25, .08);
 }
 
-
-/* =========================================================
-   PAGE CONTAINER & LAYOUT
-========================================================= */
+* { box-sizing: border-box; }
 
 .menu-page {
-    min-height: 100vh;
-    overflow-x: hidden;
-
-    background-color: #F8F5F0;
-
-    background-image:
-        radial-gradient(
-            circle at 15% 15%,
-            rgba(212, 197, 185, 0.35) 0%,
-            transparent 50%
-        ),
-        radial-gradient(
-            circle at 85% 85%,
-            rgba(230, 222, 213, 0.4) 0%,
-            transparent 50%
-        );
-
-    padding: 4rem 1rem;
-
-    color: #1A1816;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(.85rem, 4vw, 2rem);
+  color: var(--coffee);
+  background:
+    radial-gradient(ellipse at 8% 5%, rgba(210, 180, 141, .32), transparent 34%),
+    radial-gradient(ellipse at 94% 45%, rgba(232, 213, 189, .42), transparent 32%),
+    var(--cream);
 }
 
-@media (min-width: 640px) {
-    .menu-page {
-        padding: 5rem 1.5rem;
-    }
-}
+.menu-container { width: 100%; max-width: 1240px; margin: auto; }
 
-@media (min-width: 1024px) {
-    .menu-page {
-        padding: 5rem 2rem;
-    }
-}
-
-.menu-container {
-    width: 100%;
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-/* =========================================================
-   PAGE HEADER
-========================================================= */
-
-.menu-header {
-    margin-bottom: 3.5rem;
-    text-align: center;
-}
-
-@media (min-width: 640px) {
-    .menu-header {
-        margin-bottom: 4.5rem;
-    }
-}
+/* ==================== HEADER ==================== */
+.menu-header { margin: 0 auto clamp(4rem, 7vw, 6rem); text-align: center; }
 
 .menu-brand-tag {
-    display: inline-block;
-
-    padding: 0.4rem 1.25rem;
-
-    border: 1px solid rgba(26, 24, 22, 0.2);
-    border-radius: 999px;
-
-    background: rgba(212, 197, 185, 0.25);
-
-    color: #1A1816;
-
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.45em;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 17px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, .42);
+  color: var(--brown);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .2em;
+  box-shadow: 0 5px 18px rgba(65, 42, 25, .04);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
-@media (min-width: 640px) {
-    .menu-brand-tag {
-        font-size: 0.875rem;
-    }
+.menu-brand-tag .brand-mark {
+  color: #9a7b4f !important;
+  font-size: 1rem;
+}
+
+.menu-kicker {
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: .65rem;
+  font-weight: 750;
+  letter-spacing: .23em;
 }
 
 .menu-page-title {
-    margin-top: 1.25rem;
-
-    color: #1A1816;
-
-    font-size: 2.25rem;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.025em;
+  margin: 12px 0 0;
+  color: var(--coffee);
+  font: 500 clamp(3.2rem, 8vw, 6.3rem)/1 Georgia, "Times New Roman", serif;
+  letter-spacing: -.06em;
 }
 
-@media (min-width: 640px) {
-    .menu-page-title {
-        font-size: 3.75rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .menu-page-title {
-        font-size: 4.5rem;
-    }
-}
+.menu-page-title span { color: var(--gold); font-style: italic; }
 
 .menu-divider-wrapper {
-    display: flex;
-
-    max-width: 28rem;
-
-    margin: 1.25rem auto 0;
-
-    align-items: center;
-
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: min(100%, 390px);
+  margin: 24px auto 0;
 }
 
 .menu-divider-line {
-    height: 1px;
-
-    flex: 1;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(26, 24, 22, 0.25),
-        transparent
-    );
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, rgba(121, 86, 59, .4));
 }
 
-.menu-divider-text {
-    color: rgba(26, 24, 22, 0.6);
+.menu-divider-line:last-child { transform: rotate(180deg); }
 
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
+.menu-divider-text {
+  color: var(--muted);
+  font-size: .6rem;
+  font-weight: 750;
+  letter-spacing: .14em;
+  white-space: nowrap;
 }
 
 .menu-header-desc {
-    max-width: 36rem;
-
-    margin: 1.5rem auto 0;
-
-    color: rgba(26, 24, 22, 0.7);
-
-    font-size: 0.875rem;
-    line-height: 1.75;
+  max-width: 540px;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.9;
 }
 
-@media (min-width: 640px) {
-    .menu-header-desc {
-        font-size: 1rem;
-    }
+.menu-jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 27px;
 }
 
+.menu-jump-links a {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, .4);
+  color: var(--brown);
+  font-size: .72rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background .2s, color .2s, transform .2s;
+}
 
-/* =========================================================
-   SECTIONS
-========================================================= */
+.menu-jump-links a:hover {
+  transform: translateY(-2px);
+  background: var(--coffee);
+  color: var(--cream);
+}
 
+/* ==================== SECTION HEADINGS ==================== */
 .menu-section {
-    margin-bottom: 5rem;
+  margin-bottom: clamp(4rem, 7vw, 6rem);
+  scroll-margin-top: 24px;
 }
 
-.menu-section-last {
-    margin-bottom: 0;
-}
-
-
-/* =========================================================
-   SECTION TITLE
-========================================================= */
+.menu-section-last { margin-bottom: 0; }
 
 .section-title-wrapper {
-    display: flex;
-
-    margin-bottom: 2rem;
-
-    align-items: center;
-
-    gap: 1rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  margin-bottom: 27px;
 }
 
-@media (min-width: 640px) {
-    .section-title-wrapper {
-        margin-bottom: 2.5rem;
-    }
+.section-heading { display: flex; align-items: center; gap: 14px; }
+
+.section-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .85);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .52);
+  box-shadow: 0 7px 20px rgba(65, 42, 25, .05);
+  font-size: 1.3rem;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 .section-subtitle {
-    color: #594D44;
-
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.3em;
+  margin: 0 0 6px;
+  color: var(--brown);
+  font-size: .61rem;
+  font-weight: 800;
+  letter-spacing: .18em;
 }
 
 .section-title {
-    margin-top: 0.5rem;
-
-    color: #1A1816;
-
-    font-size: 1.875rem;
-    font-weight: 900;
-    line-height: 1.1;
-}
-
-@media (min-width: 640px) {
-    .section-title {
-        font-size: 2.25rem;
-    }
+  margin: 0;
+  color: var(--coffee);
+  font: 500 clamp(2rem, 4vw, 3rem)/1.05 Georgia, "Times New Roman", serif;
+  letter-spacing: -.04em;
 }
 
 .section-title-line {
-    height: 1px;
-
-    flex: 1;
-
-    margin-top: 1.75rem;
-
-    background: linear-gradient(
-        90deg,
-        rgba(26, 24, 22, 0.2),
-        transparent
-    );
+  height: 1px;
+  flex: 1;
+  margin-bottom: 7px;
+  background: linear-gradient(90deg, var(--border), transparent);
 }
 
-
-/* =========================================================
-   MENU GRIDS
-========================================================= */
-
-.menu-grid-3,
-.menu-grid-4,
-.menu-grid-5,
-.menu-grid-snacks {
-    display: grid;
-
-    grid-template-columns: repeat(
-        1,
-        minmax(0, 1fr)
-    );
-
-    gap: 1rem;
+.section-count {
+  margin-bottom: 3px;
+  color: var(--muted);
+  font-size: .59rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  white-space: nowrap;
 }
 
-@media (min-width: 640px) {
-    .menu-grid-3,
-    .menu-grid-4,
-    .menu-grid-5,
-    .menu-grid-snacks {
-        grid-template-columns: repeat(
-            2,
-            minmax(0, 1fr)
-        );
-
-        gap: 1.25rem;
-    }
+/* ==================== RESPONSIVE GRIDS ==================== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px;
 }
 
-@media (min-width: 1024px) {
+.menu-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.menu-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.menu-grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.menu-grid-snacks { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
-    .menu-grid-3 {
-        grid-template-columns: repeat(
-            3,
-            minmax(0, 1fr)
-        );
-    }
-
-    .menu-grid-4 {
-        grid-template-columns: repeat(
-            3,
-            minmax(0, 1fr)
-        );
-    }
-
-    .menu-grid-5 {
-        grid-template-columns: repeat(
-            3,
-            minmax(0, 1fr)
-        );
-    }
-
-    .menu-grid-snacks {
-        grid-template-columns: repeat(
-            4,
-            minmax(0, 1fr)
-        );
-    }
+/* ==================== GLASS CARDS ==================== */
+.menu-card, .snack-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, .82);
+  border-radius: 21px;
+  background: var(--glass);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(17px);
+  backdrop-filter: blur(17px);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
 }
 
-@media (min-width: 1280px) {
-
-    .menu-grid-4 {
-        grid-template-columns: repeat(
-            4,
-            minmax(0, 1fr)
-        );
-    }
-
-    .menu-grid-5 {
-        grid-template-columns: repeat(
-            5,
-            minmax(0, 1fr)
-        );
-    }
+.menu-card:hover, .snack-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(181, 139, 88, .42);
+  box-shadow: 0 22px 42px rgba(65, 42, 25, .13);
 }
-
-
-/* =========================================================
-   STANDARD MENU CARD
-========================================================= */
-
-.menu-card {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-
-    border: 1px solid rgba(26, 24, 22, 0.10);
-    border-radius: 18px;
-
-    background: rgba(255, 255, 255, 0.92);
-
-    padding: 0.75rem;
-
-    overflow: hidden;
-
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.9);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
-}
-
-
-/* Remove old top line */
-
-.menu-card::before {
-    display: none;
-}
-
-
-/* Hover */
-
-.menu-card:hover {
-    transform: translateY(-5px);
-
-    border-color: rgba(26, 24, 22, 0.18);
-
-    box-shadow:
-        0 16px 32px rgba(26, 24, 22, 0.10);
-}
-
-
-/* =========================================================
-   CARD BODY
-========================================================= */
 
 .menu-card-body {
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-
-    flex: 1;
-
-    align-items: center;
-
-    text-align: center;
+  display: flex;
+  width: 100%;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-
-/* =========================================================
-   PRODUCT IMAGE
-========================================================= */
-
-.menu-image-wrapper {
-    position: relative;
-
-    display: flex;
-
-    width: 100%;
-    height: 150px;
-
-    margin-bottom: 0.9rem;
-
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(26, 24, 22, 0.08);
-    border-radius: 11px;
-
-    background-color: #EFECE6;
+.menu-card h3, .snack-card h3 {
+  margin: 0;
+  color: var(--coffee);
+  font-size: .9rem;
+  font-weight: 850;
+  line-height: 1.35;
+  letter-spacing: .025em;
+  text-align: center;
 }
-
-
-/*
-    IMPORTANT:
-
-    contain = entire cup remains visible
-    cover  = cup gets cropped
-*/
-
-.menu-image-wrapper img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    transition:
-        transform 0.4s ease;
-}
-
-
-/* Subtle hover zoom */
-
-.menu-card:hover .menu-image-wrapper img,
-.snack-card:hover .menu-image-wrapper img {
-    transform: scale(1.04);
-}
-
-
-/* =========================================================
-   PRODUCT NAME
-========================================================= */
-
-.menu-card h3 {
-    margin: 0;
-
-    color: #1A1816;
-
-    font-size: 1rem;
-    font-weight: 900;
-    line-height: 1.2;
-
-    letter-spacing: 0.04em;
-
-    text-align: center;
-}
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
 
 .menu-description {
-    width: 100%;
-
-    margin-top: 0.6rem;
-
-    min-height: 42px;
-
-    color: rgba(26, 24, 22, 0.7);
-
-    font-size: 0.8rem;
-    line-height: 1.5;
-
-    text-align: center;
+  width: 100%;
+  min-height: 40px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: .73rem;
+  line-height: 1.6;
+  text-align: center;
 }
 
+/* ==================== PRODUCT IMAGES ==================== */
+.menu-image-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 155px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 1px solid rgba(121, 86, 59, .08);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(239, 230, 216, .8), rgba(255, 255, 255, .72));
+}
 
-/* =========================================================
-   PRICE GRID
-   Used for drinks with 2 sizes
-========================================================= */
+.menu-image-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform .4s ease;
+}
 
+.menu-card:hover .menu-image-wrapper img,
+.snack-card:hover .menu-image-wrapper img { transform: scale(1.045); }
+
+/* ==================== TWO-SIZE PRICES ==================== */
 .price-grid {
-    display: grid;
-
-    width: 100%;
-
-    grid-template-columns: repeat(
-        2,
-        minmax(0, 1fr)
-    );
-
-    margin-top: 0.85rem;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(26, 24, 22, 0.10);
-    border-radius: 12px;
-
-    background: rgba(212, 197, 185, 0.10);
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: auto;
+  padding-top: 15px;
+  gap: 8px;
 }
 
 .price-grid > div {
-    display: flex;
-    flex-direction: column;
-
-    min-width: 0;
-
-    padding: 0.65rem 0.4rem;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 0.35rem;
-
-    transition:
-        background-color 0.2s ease;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 5px;
+  border: 1px solid rgba(121, 86, 59, .12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .47);
+  transition: background .2s;
 }
 
-.price-grid > div:first-child {
-    border-right: 1px solid rgba(
-        26,
-        24,
-        22,
-        0.10
-    );
+.price-grid > div:hover { background: rgba(232, 213, 189, .45); }
+
+.price-grid span, .single-price span {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 30px;
+  background: var(--coffee);
+  color: var(--cream);
+  font-size: .55rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-align: center;
 }
-
-.price-grid > div:hover {
-    background-color: rgba(
-        212,
-        197,
-        185,
-        0.25
-    );
-}
-
-
-/* Size */
-
-.price-grid span {
-    display: block;
-
-    width: auto;
-    min-width: 55px;
-
-    padding: 0.25rem 0.55rem;
-
-    border: none;
-    border-radius: 999px;
-
-    background: #1A1816;
-
-    color: #F8F5F0;
-
-    font-size: 0.6rem;
-    font-weight: 800;
-
-    letter-spacing: 0.06em;
-
-    text-align: center;
-}
-
-
-/* Price */
 
 .price-grid strong {
-    color: #1A1816;
-
-    font-size: 1.25rem;
-    font-weight: 900;
-    line-height: 1;
+  color: var(--brown);
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1;
 }
 
-
-/* =========================================================
-   SINGLE PRICE
-========================================================= */
+/* ==================== FRUIT SODA ==================== */
+.fruit-card .menu-image-wrapper { height: 145px; }
+.fruit-card .menu-card-body { justify-content: flex-start; }
 
 .single-price {
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-
-    margin-top: 0.75rem;
-
-    align-items: center;
-}
-
-.single-price span {
-    display: inline-block;
-
-    padding: 0.3rem 0.85rem;
-
-    border: none;
-    border-radius: 999px;
-
-    background: #1A1816;
-
-    color: #F8F5F0;
-
-    font-size: 0.62rem;
-    font-weight: 800;
-
-    letter-spacing: 0.08em;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 16px;
 }
 
 .single-price strong {
-    display: block;
-
-    margin-top: 0.45rem;
-
-    color: #1A1816;
-
-    font-size: 1.55rem;
-    font-weight: 900;
-    line-height: 1;
+  color: var(--brown);
+  font-size: 1.45rem;
+  font-weight: 900;
+  line-height: 1;
 }
 
-
-/* =========================================================
-   FRUIT SODA
-========================================================= */
-
-.fruit-card {
-    text-align: center;
-}
-
-.fruit-image-wrapper {
-    height: 135px;
-}
-
-
-/* =========================================================
-   SNACK CARDS
-========================================================= */
-
+/* ==================== DARK SNACK CARDS ==================== */
 .snack-card {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-
-    border: 1px solid rgba(
-        26,
-        24,
-        22,
-        0.18
-    );
-
-    border-radius: 18px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #2A2622 0%,
-            #1A1816 100%
-        );
-
-    padding: 0.75rem;
-
-    color: #ffffff;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 10px 25px rgba(
-            26,
-            24,
-            22,
-            0.14
-        );
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+  border-color: rgba(255, 255, 255, .12);
+  background: linear-gradient(145deg, rgba(67, 51, 40, .97), rgba(39, 28, 21, .98));
+  box-shadow: 0 12px 28px rgba(57, 39, 30, .13);
 }
 
 .snack-card:hover {
-    transform: translateY(-5px);
-
-    border-color: rgba(
-        255,
-        255,
-        255,
-        0.18
-    );
-
-    box-shadow:
-        0 16px 32px rgba(
-            26,
-            24,
-            22,
-            0.24
-        );
+  border-color: rgba(212, 181, 138, .4);
+  box-shadow: 0 20px 40px rgba(39, 28, 21, .22);
 }
-
-
-/* =========================================================
-   SNACK IMAGE
-========================================================= */
 
 .snack-image-wrapper {
-    position: relative;
-
-    display: flex;
-
-    width: 100%;
-    height: 135px;
-
-    margin-bottom: 0.9rem;
-
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(
-        255,
-        255,
-        255,
-        0.10
-    );
-
-    border-radius: 11px;
-
-    background-color: #38322D;
+  height: 145px;
+  margin-bottom: 15px;
+  border-color: rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, .07);
 }
 
-.snack-image-wrapper img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    transition:
-        transform 0.4s ease;
-}
-
-
-/* =========================================================
-   SNACK NAME
-========================================================= */
-
-.snack-card h3 {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-size: 1rem;
-    font-weight: 900;
-
-    line-height: 1.2;
-
-    letter-spacing: 0.04em;
-
-    text-align: center;
-}
+.snack-card h3 { color: var(--cream); font-size: .85rem; }
 
 .snack-card h3 span {
-    display: block;
-
-    margin-top: 0.3rem;
-
-    color: #D4C5B9;
-
-    font-size: 0.72rem;
-    font-weight: 700;
-
-    letter-spacing: 0.08em;
+  display: block;
+  margin-top: 5px;
+  color: #d4b58a;
+  font-size: .61rem;
+  letter-spacing: .12em;
 }
 
-
-/* =========================================================
-   SNACK PRICE
-========================================================= */
-
-.snack-card p {
-    margin: 0.7rem 0 0;
-
-    color: #ffffff;
-
-    font-size: 1.55rem;
-    font-weight: 900;
-
-    line-height: 1;
-
-    text-align: center;
+.snack-price {
+  margin: auto 0 0;
+  padding-top: 17px;
+  color: #e3c69d;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.menu-footer {
-    margin-top: 5rem;
-
-    text-align: center;
-}
+/* ==================== FOOTER ==================== */
+.menu-footer { margin-top: clamp(4rem, 7vw, 6rem); text-align: center; }
 
 .menu-footer-line {
-    width: 100%;
-    max-width: 28rem;
-
-    height: 1px;
-
-    margin: 0 auto 1.5rem;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(26, 24, 22, 0.25),
-        transparent
-    );
+  width: min(100%, 450px);
+  height: 1px;
+  margin: 0 auto 25px;
+  background: linear-gradient(90deg, transparent, rgba(121, 86, 59, .35), transparent);
 }
 
 .menu-footer-quote {
-    color: rgba(26, 24, 22, 0.7);
-
-    font-family: serif;
-
-    font-size: 1.25rem;
-    font-style: italic;
-}
-
-@media (min-width: 640px) {
-    .menu-footer-quote {
-        font-size: 1.5rem;
-    }
+  margin: 0;
+  color: var(--brown);
+  font: italic 1.35rem Georgia, "Times New Roman", serif;
 }
 
 .menu-footer-hearts {
-    display: flex;
-
-    margin-top: 1.25rem;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 1rem;
-
-    color: #1A1816;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+  color: var(--gold);
 }
 
-.heart-line {
-    width: 4rem;
-    height: 1px;
+.menu-footer-hearts span { width: 45px; height: 1px; background: var(--border); }
+.menu-footer-hearts b { font-size: .8rem; }
 
-    background: rgba(
-        26,
-        24,
-        22,
-        0.25
-    );
+.menu-back-top {
+  display: inline-block;
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: .6rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-decoration: none;
 }
 
+.menu-back-top:hover { color: var(--brown); }
 
-/* =========================================================
-   SMALL MOBILE DEVICES
-========================================================= */
+/* ==================== TABLET ==================== */
+@media (max-width: 1050px) {
+  .menu-grid-3, .menu-grid-4, .menu-grid-5, .menu-grid-snacks {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
+  .menu-image-wrapper { height: 150px; }
+  .fruit-card .menu-image-wrapper { height: 140px; }
+}
+
+/* ==================== MOBILE ==================== */
+@media (max-width: 680px) {
+  .menu-page { padding: 4rem 1rem; }
+  .menu-header { margin-bottom: 4rem; }
+
+  .menu-grid, .menu-grid-3, .menu-grid-4, .menu-grid-5, .menu-grid-snacks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .menu-card, .snack-card { padding: 9px; border-radius: 17px; }
+  .menu-image-wrapper { height: 135px; margin-bottom: 12px; border-radius: 11px; }
+  .fruit-card .menu-image-wrapper, .snack-image-wrapper { height: 125px; }
+  .menu-card h3, .snack-card h3 { font-size: .79rem; }
+  .menu-description { min-height: 48px; font-size: .68rem; }
+  .price-grid { gap: 5px; padding-top: 12px; }
+  .price-grid > div { padding: 9px 3px; }
+  .price-grid strong { font-size: 1.02rem; }
+  .price-grid span { padding: 4px 7px; font-size: .5rem; }
+  .section-title-wrapper { gap: 10px; }
+  .section-icon { width: 41px; height: 41px; border-radius: 13px; font-size: 1.1rem; }
+  .section-count { font-size: .52rem; }
+  .section-subtitle { font-size: .53rem; letter-spacing: .12em; }
+  .section-title { font-size: 2rem; }
+  .menu-jump-links { gap: 7px; }
+  .menu-jump-links a { padding: 9px 12px; font-size: .67rem; }
+  .snack-card h3 span { font-size: .55rem; }
+  .snack-price { font-size: 1.3rem; }
+}
+
+/* ==================== SMALL PHONES ==================== */
 @media (max-width: 380px) {
+  .menu-page { padding-right: .7rem; padding-left: .7rem; }
 
-    .menu-page {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-    }
+  .menu-grid, .menu-grid-3, .menu-grid-4, .menu-grid-5, .menu-grid-snacks {
+    gap: 9px;
+  }
 
-    .menu-grid-3,
-    .menu-grid-4,
-    .menu-grid-5,
-    .menu-grid-snacks {
-        gap: 0.75rem;
-    }
-
-    .menu-card,
-    .snack-card {
-        padding: 0.6rem;
-        border-radius: 16px;
-    }
-
-    .menu-image-wrapper {
-        height: 120px;
-    }
-
-    .snack-image-wrapper {
-        height: 120px;
-    }
-
-    .menu-card h3,
-    .snack-card h3 {
-        font-size: 0.9rem;
-    }
-
-    .single-price strong {
-        font-size: 1.4rem;
-    }
-
-    .price-grid strong {
-        font-size: 1.15rem;
-    }
+  .menu-card, .snack-card { padding: 7px; }
+  .menu-image-wrapper { height: 115px; }
+  .fruit-card .menu-image-wrapper, .snack-image-wrapper { height: 108px; }
+  .menu-card h3, .snack-card h3 { font-size: .72rem; }
+  .menu-description { font-size: .63rem; }
+  .price-grid strong { font-size: .95rem; }
+  .single-price strong { font-size: 1.25rem; }
+  .section-title { font-size: 1.75rem; }
+  .section-icon { width: 35px; height: 35px; }
+  .section-count { display: none; }
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (min-width: 640px) {
-
-    .menu-card,
-    .snack-card {
-        padding: 0.85rem;
-    }
-
-    .menu-image-wrapper {
-        height: 150px;
-    }
-
-    .snack-image-wrapper {
-        height: 145px;
-    }
-}
-
-
-/* =========================================================
-   LARGE DESKTOP
-========================================================= */
-
-@media (min-width: 1280px) {
-
-    .menu-card,
-    .snack-card {
-        padding: 0.85rem;
-    }
-
-    .menu-image-wrapper {
-        height: 155px;
-    }
-
-    .snack-image-wrapper {
-        height: 150px;
-    }
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
-
+/* ==================== ACCESSIBILITY ==================== */
 @media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
 
-    .menu-card,
-    .snack-card,
-    .price-grid > div,
-    .menu-image-wrapper img,
-    .snack-image-wrapper img {
-        transition: none;
-    }
+  .menu-card:hover, .snack-card:hover { transform: none; }
 
-    .menu-card:hover,
-    .snack-card:hover {
-        transform: none;
-    }
-
-    .menu-card:hover .menu-image-wrapper img,
-    .snack-card:hover .menu-image-wrapper img {
-        transform: none;
-    }
+  .menu-card:hover .menu-image-wrapper img,
+  .snack-card:hover .menu-image-wrapper img { transform: none; }
 }

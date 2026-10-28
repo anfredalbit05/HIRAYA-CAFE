@@ -1,18 +1,19 @@
+
 import {
-  Component,
   AfterViewInit,
-  ViewChild,
-  ElementRef
+  Component,
+  ElementRef,
+  ViewChild
 } from '@angular/core';
 
 @Component({
   selector: 'app-about',
+  standalone: true,
   imports: [],
-  styleUrl: './about.css',
   templateUrl: './about.html',
+  styleUrl: './about.css'
 })
 export class About implements AfterViewInit {
-
   @ViewChild('hirayaVideo')
   hirayaVideo!: ElementRef<HTMLVideoElement>;
 
@@ -21,30 +22,32 @@ export class About implements AfterViewInit {
   ngAfterViewInit(): void {
     const video = this.hirayaVideo.nativeElement;
 
-    // Required for mobile autoplay
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;
-    video.volume = 1;
 
-    video.play().catch((error) => {
-      console.warn('Autoplay failed:', error);
+    video.play().catch(() => {
+      // Autoplay may be blocked by the browser.
     });
   }
 
+  backToAboutTop(): void {
+  document.getElementById('about-top')?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+}
+
   toggleSound(): void {
-    const video = this.hirayaVideo.nativeElement;
+    const video = this.hirayaVideo?.nativeElement;
+
+    if (!video) return;
 
     video.muted = !video.muted;
-    video.volume = 1;
-
     this.isMuted = video.muted;
 
-    // User interaction allows playback with sound
-    if (!video.muted) {
-      video.play().catch((error) => {
-        console.error('Playback failed:', error);
-      });
-    }
+    video.play().catch(() => {
+      // Playback can require another user interaction.
+    });
   }
 }

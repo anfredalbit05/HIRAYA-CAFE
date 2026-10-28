@@ -1,20 +1,13 @@
-<section class="about-page">
+
+<section class="about-page" id="about-top">
   <div class="about-container">
 
-    <!-- =========================
-         ABOUT / STORY
-    ========================= -->
     <div class="about-grid">
-
-      <!-- Left -->
       <div class="about-content">
-        <p class="about-tag">
-          OUR STORY
-        </p>
+        <p class="about-tag">OUR STORY</p>
 
         <h1 class="about-title">
-          MORE THAN
-          <br />
+          MORE THAN<br />
           JUST A CAFE.
         </h1>
 
@@ -32,16 +25,11 @@
         </p>
       </div>
 
-      <!-- =========================
-           RIGHT HIGHLIGHT
-      ========================= -->
       <div class="about-highlight">
-        <p class="highlight-tag">
-          HIRAYA
-        </p>
+        <p class="highlight-tag">HIRAYA</p>
 
         <h2 class="highlight-title">
-          BREWED TO INSPIRE,
+          BREWED TO INSPIRE,<br />
           MADE FOR YOU.
         </h2>
 
@@ -53,104 +41,64 @@
           to make your day better.
         </p>
 
-        <p class="highlight-quote">
-          Made with comfort in every cup.
-        </p>
+        <p class="highlight-quote">Made with comfort in every cup.</p>
       </div>
-
     </div>
 
-
-    <!-- =========================
-     GALLERY / EXPERIENCE
-    ========================= -->
     <section class="about-media-section">
+      <header class="media-header">
+        <p class="about-tag">THE HIRAYA EXPERIENCE</p>
 
-      <div class="media-header">
-        <p class="about-tag">
-          THE HIRAYA EXPERIENCE
-        </p>
-
-        <h2 class="media-title">
-          MOMENTS AT HIRAYA
-        </h2>
+        <h2 class="media-title">MOMENTS AT HIRAYA</h2>
 
         <p class="media-subtitle">
           A glimpse of our drinks, our space, and the moments we love sharing with you.
         </p>
-      </div>
+      </header>
 
-      <!-- =========================
-          PHOTO GALLERY
-      ========================= -->
       <div class="about-gallery">
-
         <div class="gallery-item gallery-item-large">
-          <img
-            src="images/about/hiraya-1.jpg"
-            alt="Hiraya Cafe interior"
-          />
-          <div class="gallery-overlay">
-            <span>OUR SPACE</span>
-          </div>
+          <img src="/images/about/hiraya-1.jpg"
+               alt="Hiraya Cafe interior"
+               loading="lazy" />
+          <div class="gallery-overlay"><span>OUR SPACE</span></div>
         </div>
 
         <div class="gallery-item">
-          <img
-            src="images/about/hiraya-2.jpg"
-            alt="Hiraya Cafe coffee"
-          />
-          <div class="gallery-overlay">
-            <span>FRESHLY BREWED</span>
-          </div>
+          <img src="/images/about/hiraya-2.jpg"
+               alt="Hiraya Cafe coffee"
+               loading="lazy" />
+          <div class="gallery-overlay"><span>FRESHLY BREWED</span></div>
         </div>
 
         <div class="gallery-item">
-          <img
-            src="assets/images/about/hiraya-3.jpg"
-            alt="Hiraya Cafe drinks"
-          />
-          <div class="gallery-overlay">
-            <span>MADE FOR YOU</span>
-          </div>
+          <img src="/images/about/hiraya-3.jpg"
+               alt="Hiraya Cafe drinks"
+               loading="lazy" />
+          <div class="gallery-overlay"><span>MADE FOR YOU</span></div>
         </div>
 
         <div class="gallery-item">
-          <img
-            src="images/about/hiraya-4.jpg"
-            alt="Hiraya Cafe snacks"
-          />
-          <div class="gallery-overlay">
-            <span>GOOD FOOD</span>
-          </div>
+          <img src="/images/about/hiraya-4.jpg"
+               alt="Hiraya Cafe snacks"
+               loading="lazy" />
+          <div class="gallery-overlay"><span>GOOD FOOD</span></div>
         </div>
 
         <div class="gallery-item gallery-item-wide">
-          <img
-            src="images/about/hiraya-5.jpg"
-            alt="Friends enjoying Hiraya Cafe"
-          />
-          <div class="gallery-overlay">
-            <span>GOOD MOMENTS</span>
-          </div>
+          <img src="/images/about/hiraya-5.jpg"
+               alt="Friends enjoying Hiraya Cafe"
+               loading="lazy" />
+          <div class="gallery-overlay"><span>GOOD MOMENTS</span></div>
         </div>
-
       </div>
 
-      <!-- =========================
-          VIDEO SECTION
-      ========================= -->
-      <div class="about-video-section">
-
+      <section class="about-video-section">
         <div class="video-content">
-
-          <p class="video-tag">
-            DISCOVER HIRAYA
-          </p>
+          <p class="video-tag">DISCOVER HIRAYA</p>
 
           <h2 class="video-title">
-            SEE THE HIRAYA
-            <br />
+            SEE THE HIRAYA<br />
             EXPERIENCE.
           </h2>
 
@@ -161,15 +109,10 @@
             that make Hiraya Cafe a place worth coming back to.
           </p>
 
-          <p class="video-quote">
-            Your space. Your drink. Your moment.
-          </p>
-
+          <p class="video-quote">Your space. Your drink. Your moment.</p>
         </div>
 
-        <!-- VIDEO -->
         <div class="video-wrapper">
-
           <video
             #hirayaVideo
             class="hiraya-video"
@@ -177,14 +120,11 @@
             muted
             loop
             playsinline
-            preload="auto"
+            preload="metadata"
             poster="/images/about/video-poster.jpg"
+            aria-label="Hiraya Cafe atmosphere video"
           >
-            <source
-              src="/videos/hiraya-cafe.mp4"
-              type="video/mp4"
-            />
-
+            <source src="/videos/hiraya-cafe.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
@@ -192,88 +132,71 @@
             type="button"
             class="sound-button"
             (click)="toggleSound()"
-            aria-label="Toggle video sound"
+            [attr.aria-label]="isMuted ? 'Unmute video' : 'Mute video'"
+            [attr.aria-pressed]="!isMuted"
           >
             {{ isMuted ? '🔇' : '🔊' }}
           </button>
-
         </div>
-
-      </div>
-
+      </section>
     </section>
 
-    <!-- =========================
-         VALUES HEADER
-    ========================= -->
-    <div class="values-header">
-      <p class="about-tag">
-        WHAT WE BELIEVE
-      </p>
+    <header class="values-header">
+      <p class="about-tag">WHAT WE BELIEVE</p>
+      <h2 class="values-title">OUR VALUES</h2>
+    </header>
 
-      <h2 class="values-title">
-        OUR VALUES
-      </h2>
-    </div>
-
-    <!-- =========================
-         VALUES
-    ========================= -->
     <div class="values-grid">
-
-      <!-- Quality -->
-      <div class="value-card">
-        <p class="value-number">
-          01
-        </p>
+      <article class="value-card">
+        <p class="value-number">01</p>
         <div class="value-divider"></div>
-        <h3 class="value-card-title">
-          QUALITY
-        </h3>
+        <h3 class="value-card-title">QUALITY</h3>
         <p class="value-card-desc">
           Made with ingredients chosen to give you a delicious experience.
         </p>
-      </div>
+      </article>
 
-      <!-- Comfort -->
-      <div class="value-card">
-        <p class="value-number">
-          02
-        </p>
+      <article class="value-card">
+        <p class="value-number">02</p>
         <div class="value-divider"></div>
-        <h3 class="value-card-title">
-          COMFORT
-        </h3>
+        <h3 class="value-card-title">COMFORT</h3>
         <p class="value-card-desc">
           A cozy space where everyone can relax and enjoy.
         </p>
-      </div>
+      </article>
 
-      <!-- Community -->
-      <div class="value-card">
-        <p class="value-number">
-          03
-        </p>
+      <article class="value-card">
+        <p class="value-number">03</p>
         <div class="value-divider"></div>
-        <h3 class="value-card-title">
-          COMMUNITY
-        </h3>
+        <h3 class="value-card-title">COMMUNITY</h3>
         <p class="value-card-desc">
           Creating good moments and connections through food and drinks.
         </p>
+      </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="about-footer">
+      <div class="about-footer-line"></div>
+
+      <p class="about-footer-quote">
+        “Brewed to inspire, made for you.”
+      </p>
+
+      <div class="about-footer-hearts">
+        <span></span>
+        <b>♥</b>
+        <span></span>
       </div>
 
-    </div>
-
-    <!-- =========================
-         FOOTER MESSAGE
-    ========================= -->
-    <div class="about-footer">
-      <div class="footer-divider"></div>
-      <p class="footer-message">
-        Brewed to inspire, made for you.
-      </p>
-    </div>
+      <button
+        type="button"
+        class="about-back-to-top"
+        (click)="backToAboutTop()"
+      >
+        BACK TO TOP ↑
+      </button>
+    </footer>
 
   </div>
 </section>
